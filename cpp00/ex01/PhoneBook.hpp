@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
+/*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 22:53:46 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/03/10 23:32:29 by henrique-re      ###   ########.fr       */
+/*   Updated: 2026/03/12 12:11:51 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ class PhoneBook
 {
 	private:
 		Contact contacts[8];
+		std::size_t	contact_index;
 		
 	public:
+		PhoneBook();
 		void	add();
 		void	search();
 };
