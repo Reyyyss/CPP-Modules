@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 22:51:38 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/03/12 12:06:42 by hcarrasq         ###   ########.fr       */
+/*   Updated: 2026/03/12 23:16:43 by henrique-re      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <iostream>
 #include <algorithm>
 #include <cctype>
+#include <sstream>
 
 
 class Contact
@@ -32,7 +33,6 @@ class Contact
 		std::string PhoneNumber;
 	public:
 		Contact();
-		~Contact();
 		std::string	getFirstName(void) const;
 		std::string	getLastName(void) const;
 		std::string	getDarkestSecret(void) const; //this 5 functions are getter functions

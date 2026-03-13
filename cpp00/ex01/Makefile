@@ -14,7 +14,9 @@ NAME := Phonebook
 
 CC := c++
 
-SRCS := $(SRCS:%.cpp=%.o)
+SRCS := main.cpp Phonebook.cpp Contact.cpp
+
+OBJS := $(SRCS:.cpp=.o)
 
 CFLAGS := -Wall -Wextra -Werror -std=c++98
 
@@ -23,7 +25,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-$(OBJS): $(SRCS)
+
+%.o: %.cpp
 	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
@@ -37,4 +40,4 @@ re: fclean all
 val:
 	valgrind --leak-check=full -s ./$(NAME)
 
-.PHONY: clean fclean re
+.PHONY: all clean fclean re val

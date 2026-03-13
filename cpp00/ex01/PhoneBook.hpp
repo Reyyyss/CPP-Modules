@@ -20,6 +20,7 @@ class PhoneBook
 	private:
 		Contact contacts[8];
 		std::size_t	contact_index;
+		std::size_t	contact_count;
 		
 	public:
 		PhoneBook();
