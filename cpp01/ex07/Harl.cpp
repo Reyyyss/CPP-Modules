@@ -6,7 +6,7 @@
 /*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 03:58:27 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/20 15:40:31 by hcarrasq         ###   ########.fr       */
+/*   Updated: 2026/04/20 15:58:26 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,33 @@ void	Harl::error(){
 	std::cerr << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+void	Harl::complain_list(int index)
+{
+	void (Harl::*safoda[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	switch(index)
+	{
+		case 1:
+			(this->*safoda[0])();
+		case 2:
+			(this->*safoda[1])();
+		case 3:
+			(this->*safoda[2])();
+		case 4:
+			(this->*safoda[3])();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
+}
 
 void	Harl::complain(std::string complain_level)
 {
 	std::string strin[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*safoda[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	for (int i = 0; i < 4; i++)
 	{
 		if (complain_level == strin[i])
-			(this->*safoda[i])();
+		{
+			this->complain_list(i + 1);
+		}
 	}
 }

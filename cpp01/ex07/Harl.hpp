@@ -6,7 +6,7 @@
 /*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 03:53:56 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/20 15:38:26 by hcarrasq         ###   ########.fr       */
+/*   Updated: 2026/04/20 15:46:33 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Harl {
 
 	public:
 		void	complain(std::string level);
-	
+		void	complain_list(int index);
 };
 
 #endif
