@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/18 15:13:08 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/21 15:35:55 by henrique-re      ###   ########.fr       */
+/*   Created: 2026/04/23 12:53:38 by henrique-re       #+#    #+#             */
+/*   Updated: 2026/04/23 13:11:38 by henrique-re      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <vector>
 #include <iomanip>
@@ -25,26 +25,21 @@
 #include <float.h>
 #include <math.h>
 
-class Fixed{
-
+class ClapTrap {
 	private:
-		int _fixed_point;
-		static const int _fractional_bits = 8;
+		std::string Name;
+		int Hit_points;
+		int Energy_points;
+		int AD;
 	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		Fixed(const int fixed_int);
-		Fixed(const float fixed_float);
-		Fixed& operator=(const Fixed& other);
-		~Fixed();
+		ClapTrap();
+		ClapTrap (const ClapTrap& other);
+		~ClapTrap();
 
-		float toFloat(void) const;
-		int toInt(void) const;
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
-
+		void	attack(const std::string &target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif
