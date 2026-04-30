@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/23 12:53:38 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/27 12:35:36 by hcarrasq         ###   ########.fr       */
+/*   Created: 2026/04/27 14:34:34 by hcarrasq          #+#    #+#             */
+/*   Updated: 2026/04/27 14:36:37 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 #include <math.h>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string Name;
 		int Hit_points;
 		int Energy_points;
