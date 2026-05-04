@@ -13,27 +13,27 @@
 
 NAME		:=	Sed_is_for_losers
 
-CC			:=	c++
+CXX		:=	c++
 
-SRCS		:=	main.cpp
+SRCS		:=	main.cpp notsed.cpp
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 
-CFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS): %.o: %.cpp
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 	
 clean:
-	rm -fr $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -fr $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
