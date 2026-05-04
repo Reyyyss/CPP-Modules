@@ -26,6 +26,10 @@ Fixed::Fixed(const int fixed_int){
 	_fixed_point = fixed_int << this->_fractional_bits;
 }
 
+Fixed::~Fixed(){
+	std::cout << "Destructor" << std::endl;
+}
+
 Fixed::Fixed(const float fixed_float){
 	std::cout << "Fixed_float constructor called" << std::endl;
 	_fixed_point = (roundf(fixed_float * (1 << this->_fractional_bits)));
@@ -38,8 +42,12 @@ Fixed& Fixed::operator=(const Fixed& other) {
 	return *this;
 }
 
-Fixed::~Fixed(){
-	std::cout << "Destructor" << std::endl;
+int Fixed::getRawBits(void) const {
+    return _fixed_point;
+}
+
+void Fixed::setRawBits(int const raw) {
+    _fixed_point = raw;
 }
 
 int Fixed::toInt(void)const {
