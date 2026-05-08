@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
+/*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:36:13 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/21 15:44:24 by henrique-re      ###   ########.fr       */
+/*   Updated: 2026/05/07 13:03:11 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed()
 	: _fixed_point(0)
@@ -21,7 +21,7 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor" << std::endl;
-	_fixed_point = getRawBits();
+	_fixed_point = other._fixed_point;
 }
 
 Fixed& Fixed::operator=(const Fixed& other) {
@@ -35,10 +35,10 @@ Fixed::~Fixed(){
 	std::cout << "Destructor" << std::endl;
 }
 
-int Fixed::getRawBits(void)
+int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits" << std::endl;
-	return this->_fractional_bits;
+	return this->_fixed_point;
 }
 
 void Fixed::setRawBits(int const raw)

@@ -3,32 +3,30 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+         #
+#    By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/04/12 16:58:43 by henrique-re       #+#    #+#              #
-#    Updated: 2026/04/12 16:59:28 by henrique-re      ###   ########.fr        #
+#    Created: 2026/04/13 12:25:46 by henrique-re       #+#    #+#              #
+#    Updated: 2026/05/05 17:45:27 by hcarrasq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:=	Moar_brainz
+NAME		:=	HI_THIS_IS_BRAIN
 
-CC			:=	c++
+CXX			:=	c++
 
-SRCS		:=	main.cpp \
-				Zombie.cpp \
-				ZombieHorde.cpp
+SRCS		:=	main.cpp
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 
-CFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS): %.o: %.cpp
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 	
 clean:
 	rm -fr $(OBJS)

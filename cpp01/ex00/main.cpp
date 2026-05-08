@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
+/*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/14 01:54:51 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/12 16:52:50 by henrique-re      ###   ########.fr       */
+/*   Created: 2026/03/14 01:54:56 by henrique-re       #+#    #+#             */
+/*   Updated: 2026/05/04 14:14:44 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
-Zombie* Zombie::newZombie( std::string name )
+int	main(void)
 {
-	Zombie *new_zombie = new Zombie(name); //allocating memory dinamically for a new zombie
+	randomChump("Stacky");
+	Zombie *z = newZombie("Heapy");
+	if (z)
+	{
+		z->announce();
+		delete z;
+	}
 
-	return new_zombie;
+	return 0;
 }
-

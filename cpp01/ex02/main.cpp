@@ -5,27 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 12:39:51 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/13 13:51:55 by henrique-re      ###   ########.fr       */
+/*   Created: 2026/04/13 12:31:47 by henrique-re       #+#    #+#             */
+/*   Updated: 2026/04/13 12:36:01 by henrique-re      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include <string>
 #include <iostream>
 
-int main() {
-    Weapon club("crude spiked club");
-    HumanA bob("Bob", club);
-    bob.attack();
-    club.setType("some other type of club");
-    bob.attack();
+int	main(void)
+{
+	std::string str = "HI THIS IS BRAIN";
+	std::string *str_PTR = &str;
+	std::string &str_REF = str;
 
-    Weapon club2("crude spiked club");
-    HumanB jim("Jim");
-    jim.setWeapon(club2);
-    jim.attack();
-    club2.setType("some other type of club");
-    jim.attack();
+	std::cout << "Memory address of str:      " << &str << std::endl;
+    std::cout << "Memory address held by PTR: " << str_PTR << std::endl;
+    std::cout << "Memory address held by REF: " << &str_REF << std::endl;
+
+	std::cout << "Value of str:               " << str << std::endl;
+    std::cout << "Value pointed by PTR:       " << *str_PTR << std::endl;
+    std::cout << "Value pointed by REF:       " << str_REF << std::endl;
+	
 }

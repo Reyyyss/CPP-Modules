@@ -3,19 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+         #
+#    By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/13 12:38:59 by henrique-re       #+#    #+#              #
-#    Updated: 2026/04/13 16:02:47 by henrique-re      ###   ########.fr        #
+#    Updated: 2026/05/05 17:46:22 by hcarrasq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME		:=	Sed_is_for_losers
+NAME		:=	Harl
 
-CXX		:=	c++
+CXX			:=	c++
 
-SRCS		:=	main.cpp notsed.cpp
+SRCS		:=	Harl.cpp main.cpp 
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 
@@ -30,10 +30,10 @@ $(OBJS): %.o: %.cpp
 	$(CXX) -c $(CXXFLAGS) $< -o $@
 	
 clean:
-	rm -f $(OBJS)
+	rm -fr $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -fr $(NAME)
 
 re: fclean all
 

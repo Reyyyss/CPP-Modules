@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
+/*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:44:55 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/21 15:44:57 by henrique-re      ###   ########.fr       */
+/*   Updated: 2026/05/07 12:31:22 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,7 @@ Fixed Fixed::operator-(const Fixed& other) const {
 
 Fixed Fixed::operator*(const Fixed& other) const {
     Fixed result;
-
-    // use wider type to avoid overflow in intermediate multiplication
     long long prod = static_cast<long long>(this->_fixed_point) * other._fixed_point;
-
-    // rescale back to fixed-point (divide by 2^fractional_bits)
     result._fixed_point = static_cast<int>(prod >> _fractional_bits);
     return result;
 }
@@ -101,7 +97,6 @@ Fixed Fixed::operator/(const Fixed& other) const {
         std::cerr << "Fixed: division by zero" << std::endl;
         return Fixed(0);
     }
-
     Fixed result;
     long long num = (static_cast<long long>(this->_fixed_point) << _fractional_bits);
 
@@ -132,23 +127,34 @@ Fixed Fixed::operator--(int) {
 }
 
 Fixed& Fixed::min(Fixed& a, Fixed& b) {
-    return (a._fixed_point < b._fixed_point) ? a : b;
+    if (a._fixed_point < b._fixed_point)
+        return a;
+    else
+        return b;
 }
 
 Fixed& Fixed::max(Fixed& a, Fixed& b) {
-    return (a._fixed_point > b._fixed_point) ? a : b;
+    if (a._fixed_point > b._fixed_point)
+        return a;
+    else
+        return b;
 }
 
 const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
-    return (a._fixed_point < b._fixed_point) ? a : b;
+    if (a._fixed_point < b._fixed_point)
+        return a;
+    else
+        return b;
 }
 
 const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
-    return (a._fixed_point > b._fixed_point) ? a : b;
+    if (a._fixed_point > b._fixed_point)
+        return a;
+    else
+        return b;
 }
 
 int Fixed::toInt(void) const {
-    // shift is the “native” fixed-point int conversion
     return _fixed_point >> _fractional_bits;
 }
 

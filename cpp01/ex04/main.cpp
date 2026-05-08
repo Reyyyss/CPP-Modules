@@ -3,29 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
+/*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 12:39:51 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/13 13:51:55 by henrique-re      ###   ########.fr       */
+/*   Created: 2026/04/13 14:38:28 by henrique-re       #+#    #+#             */
+/*   Updated: 2026/05/05 17:49:51 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
-#include <iostream>
+#include "notsed.hpp"
 
-int main() {
-    Weapon club("crude spiked club");
-    HumanA bob("Bob", club);
-    bob.attack();
-    club.setType("some other type of club");
-    bob.attack();
+int	main(int argc, char **argv)
+{	
+	if (argc != 4)
+	{
+		std::cout << "Wrong number of arguments sent\n Expected: 4\n Sent:" << argc << std::endl;
+		std::cout << "Correct usage: <./a.out file_name replaced_string string_to_replace>" << std::endl;
+		return 1;
+	}
+	if (!argv[2]|| argv[2][0] == '\0')
+	{
+		std::cout << "Second argument is empty so there's to replace" << std::endl;
+		return 1;
+	}
+	NotSed MyNotSed(argv[1], argv[2], argv[3]);
+	MyNotSed.Replacer();
+	
+	/* std::ofstream replace_file(changed_file.c_str());
+	replace_file.close();
+	std::cout << "You used the program correctly"; */
 
-    Weapon club2("crude spiked club");
-    HumanB jim("Jim");
-    jim.setWeapon(club2);
-    jim.attack();
-    club2.setType("some other type of club");
-    jim.attack();
-}
+	
+	
+} 

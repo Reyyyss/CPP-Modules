@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
+/*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 12:37:31 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/16 16:41:35 by henrique-re      ###   ########.fr       */
+/*   Created: 2026/04/19 03:53:56 by henrique-re       #+#    #+#             */
+/*   Updated: 2026/04/20 15:38:26 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <vector>
 #include <iomanip>
@@ -23,19 +23,16 @@
 #include <iostream>
 #include <fstream>
 
-class Fixed{
-
+class Harl {
 	private:
-		int _fixed_point;
-		static const int _fractional_bits = 8;
-	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		Fixed& operator=(const Fixed& other);
-		~Fixed();
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
 
-		int	getRawBits(void);
-		void	setRawBits(int const raw);
+	public:
+		void	complain(std::string level);
+	
 };
 
 #endif

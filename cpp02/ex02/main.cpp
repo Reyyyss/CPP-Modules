@@ -17,7 +17,7 @@ int main(void)
 	std::cout << "--- constructors ---" << std::endl;
 	Fixed a;
 	Fixed b(5);
-	Fixed c(3.75f);
+	Fixed c(1.5f);
 	Fixed d(c);
 
 	std::cout << "a = " << a << std::endl;

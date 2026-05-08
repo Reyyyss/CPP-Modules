@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
+/*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/14 01:54:56 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/12 16:50:06 by henrique-re      ###   ########.fr       */
+/*   Created: 2026/05/04 14:02:00 by hcarrasq          #+#    #+#             */
+/*   Updated: 2026/05/04 14:02:11 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main(void)
+int main()
 {
-	Zombie *zombie = NULL;
-
-	
+	int N = 5;
+	Zombie *horde = zombieHorde(N, "Bob");
+	if (!horde)
+		return 1;
+	for (int i = 0; i < N; ++i)
+		horde[i].announce();
+	delete [] horde;
+	return 0;
 }

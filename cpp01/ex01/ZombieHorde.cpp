@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/19 03:53:56 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/20 15:46:33 by hcarrasq         ###   ########.fr       */
+/*   Created: 2026/05/04 13:50:38 by hcarrasq          #+#    #+#             */
+/*   Updated: 2026/05/04 13:54:11 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#include "Zombie.hpp"
 
-#include <vector>
-#include <iomanip>
-#include <string>
-#include <iostream>
-#include <algorithm>
-#include <cctype>
-#include <sstream>
-#include <iostream>
-#include <fstream>
-
-class Harl {
-	private:
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
-
-	public:
-		void	complain(std::string level);
-		void	complain_list(int index);
-};
-
-#endif
+Zombie* zombieHorde( int N, std::string name) {
+	if (N <= 0 || name.empty())
+		return NULL;
+	Zombie *Zombie_Horde = new Zombie[N];
+	for (int i = 0; i < N; i++){
+		Zombie_Horde[i].eponym(name);
+	}
+	return Zombie_Horde;
+}

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+         #
+#    By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/16 22:03:48 by henrique-re       #+#    #+#              #
-#    Updated: 2026/04/18 15:12:51 by henrique-re      ###   ########.fr        #
+#    Updated: 2026/05/07 12:35:56 by hcarrasq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS		:=	$(SRCS:%.cpp=%.o)
 
 CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98 -g
 
-all: $(NAME) && clear
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)

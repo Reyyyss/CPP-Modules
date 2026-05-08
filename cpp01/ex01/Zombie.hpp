@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
+/*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/14 01:55:02 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/12 16:54:32 by henrique-re      ###   ########.fr       */
+/*   Created: 2026/04/12 17:01:07 by henrique-re       #+#    #+#             */
+/*   Updated: 2026/05/04 13:55:25 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,16 @@
 class Zombie
 {
 	private:
-		std::string name;
+		std::string _name;
 	public:
+		Zombie();
 		Zombie(std::string name);
 		~Zombie();
-		Zombie* newZombie(std::string name);
-		void	randomChump(std::string name);
+
 		void	announce(void) const;
+		void	eponym(std::string name);
 };
+
+	Zombie* zombieHorde(int n_zombies, std::string name);
 
 #endif

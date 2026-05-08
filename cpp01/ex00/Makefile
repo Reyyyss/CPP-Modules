@@ -5,29 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/04/13 12:38:59 by henrique-re       #+#    #+#              #
-#    Updated: 2026/04/20 15:43:08 by hcarrasq         ###   ########.fr        #
+#    Created: 2026/03/14 01:54:59 by henrique-re       #+#    #+#              #
+#    Updated: 2026/05/05 17:51:49 by hcarrasq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME		:=	BraiiiiiiinnnzzzZ
 
-NAME		:=	Harl_filter
+CXX			:=	c++
 
-CC			:=	c++
-
-SRCS		:=	Harl.cpp main.cpp 
+SRCS		:=	main.cpp \
+				Zombie.cpp \
+				newZombie.cpp \
+				randomChump.cpp
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 
-CFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS): %.o: %.cpp
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 	
 clean:
 	rm -fr $(OBJS)

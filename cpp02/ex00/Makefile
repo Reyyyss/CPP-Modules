@@ -3,39 +3,38 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+         #
+#    By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/16 12:36:27 by henrique-re       #+#    #+#              #
-#    Updated: 2026/04/18 15:12:33 by henrique-re      ###   ########.fr        #
+#    Updated: 2026/05/07 13:18:06 by hcarrasq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:=	Fixed
 
-CC			:=	c++
+CXX		:=	c++
 
-SRCS		:=	main.cpp
+SRCS		:=	main.cpp Fixed.cpp
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 
-CFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
 
-all: $(NAME) && clear
+all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS): %.o: %.cpp
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 	
 clean:
-	rm -fr $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -fr $(NAME)
-
-re: fclean all
-
+	rm -f  $(NAME)
+re: 
+	fclean all
 val:
 	valgrind --leak-check=full -s ./$(NAME)
 

@@ -3,27 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
+/*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/14 01:55:05 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/12 16:55:59 by henrique-re      ###   ########.fr       */
+/*   Created: 2026/05/04 13:46:05 by hcarrasq          #+#    #+#             */
+/*   Updated: 2026/05/04 13:50:28 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
-{
-	this->name = name;
+Zombie::Zombie() {
+	_name = "Zombie";
 }
 
-Zombie::~Zombie(void)
-{
-	std::cout << 
+Zombie::Zombie(std::string name) { 
+	_name = name;
 }
 
-void	Zombie::announce(void) const
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ...\n";
+Zombie::~Zombie() {
+	
 }
 
+void	Zombie::announce() const{
+	std::cout << _name << ": BraiiiiiiinnnzzzZ..." <<std::endl;
+}
+
+void	Zombie::eponym(std::string name) {
+	_name = name;
+}

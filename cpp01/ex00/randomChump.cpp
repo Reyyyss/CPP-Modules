@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/19 03:56:50 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/04/20 15:41:41 by hcarrasq         ###   ########.fr       */
+/*   Created: 2026/03/14 01:54:48 by henrique-re       #+#    #+#             */
+/*   Updated: 2026/05/04 14:14:16 by hcarrasq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Zombie.hpp"
 
-int main (int argc, char **argv){
-	if (argc != 2){
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		return 1;
-	}
-	Harl harl;
-	harl.complain(argv[1]);
+void randomChump(std::string name)
+{
+	Zombie new_zombie(name);
+	new_zombie.announce();
 }

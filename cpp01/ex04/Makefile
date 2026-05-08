@@ -6,37 +6,34 @@
 #    By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/13 12:38:59 by henrique-re       #+#    #+#              #
-#    Updated: 2026/04/13 13:53:23 by henrique-re      ###   ########.fr        #
+#    Updated: 2026/04/13 16:02:47 by henrique-re      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME		:=	Unnecessary_violence
+NAME		:=	Sed_is_for_losers
 
-CC			:=	c++
+CXX		:=	c++
 
-SRCS		:=	main.cpp\
-				HumanA.cpp\
-				HumanB.cpp\
-				Weapon.cpp 
+SRCS		:=	main.cpp notsed.cpp
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 
-CFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS): %.o: %.cpp
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 	
 clean:
-	rm -fr $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -fr $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
