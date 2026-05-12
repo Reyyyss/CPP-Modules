@@ -14,10 +14,9 @@
 
 int main()
 {
-	ClapTrap clapper;
-	ClapTrap guy;
+	ClapTrap clapper("Clapper");
+	ClapTrap guy("Guy");
 
-	
 	clapper.attack(guy.getname());
 	guy.takeDamage(clapper.get_dmgammount());
 	std::cout << "ClapTrap HP:" << guy.get_hitpoints() << std::endl;

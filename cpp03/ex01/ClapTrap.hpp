@@ -6,24 +6,15 @@
 /*   By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 12:53:38 by henrique-re       #+#    #+#             */
-/*   Updated: 2026/05/09 12:01:37 by henrique-re      ###   ########.fr       */
+/*   Updated: 2026/05/12 01:40:47 by henrique-re      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
-#include <vector>
-#include <iomanip>
 #include <string>
 #include <iostream>
-#include <algorithm>
-#include <cctype>
-#include <sstream>
-#include <iostream>
-#include <fstream>
-#include <float.h>
-#include <math.h>
 
 class ClapTrap {
 	protected:
@@ -33,6 +24,7 @@ class ClapTrap {
 		int AD;
 	public:
 		ClapTrap();
+		ClapTrap(const std::string &name);
 		ClapTrap (const ClapTrap& other);
 		ClapTrap& operator=(const ClapTrap &other);
 		~ClapTrap();
