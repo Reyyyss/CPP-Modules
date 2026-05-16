@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: assistant <assistant@example.com>           +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 11:30:00 by assistant         #+#    #+#             */
-/*   Updated: 2026/05/12 11:30:00 by assistant        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Animal.hpp"
 
 Animal::Animal() : type("Animal") {
@@ -31,4 +19,10 @@ Animal::~Animal() {
     std::cout << "Animal destroyed" << std::endl;
 }
 
-std::string Animal::getType() const { return type; }
+std::string Animal::getType() const { 
+    return type; 
+}
+
+void Animal::makeSound() const {
+    std::cout << "Some generic animal sound" << std::endl;
+}

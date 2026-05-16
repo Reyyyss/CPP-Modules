@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: assistant <assistant@example.com>           +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 12:34:00 by assistant         #+#    #+#             */
-/*   Updated: 2026/05/12 12:34:00 by assistant        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 
 #include "AAnimal.hpp"
 #include "Dog.hpp"
@@ -26,11 +16,11 @@ int main()
         else
             arr[i] = new Cat();
     }
-
+    std::cout << "------------------------" << std::endl;
     std::cout << "\n-- Deleting animals --" << std::endl;
     for (int i = 0; i < N; ++i)
         delete arr[i];
-
+    std::cout << "------------------------" << std::endl;
     std::cout << "\n-- Deep copy test --" << std::endl;
     Dog *d1 = new Dog();
     d1->getBrain()->ideas[0] = "Chase the ball";

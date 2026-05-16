@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: assistant <assistant@example.com>           +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 11:30:00 by assistant         #+#    #+#             */
-/*   Updated: 2026/05/12 11:30:00 by assistant        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
@@ -25,7 +13,7 @@ public:
     Animal &operator=(const Animal &other);
     virtual ~Animal();
 
-    virtual void makeSound() const = 0;
+    virtual void makeSound() const;
     std::string getType() const;
 };
 

@@ -14,9 +14,9 @@ int main() {
 
     delete j;
     delete i;
-
+    std::cout << "------------------------" << std::endl;
     std::cout << std::endl;
-    std::cout << "---- Canonical form test ----" << std::endl;
+    std::cout << "---- Canonical Orthodox checking ----" << std::endl;
     Dog basicDog;
     Dog copiedDog(basicDog);
     Dog assignedDog;
@@ -26,7 +26,7 @@ int main() {
     Cat copiedCat(basicCat);
     Cat assignedCat;
     assignedCat = copiedCat;
-
+    std::cout << "------------------------" << std::endl;
     std::cout << std::endl;
     std::cout << "---- Base class sound test ----" << std::endl;
     Animal baseAnimal;
