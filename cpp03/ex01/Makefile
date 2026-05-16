@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: henrique-reis <henrique-reis@student.42    +#+  +:+       +#+         #
+#    By: hcarrasq <hcarrasq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/16 12:36:27 by henrique-re       #+#    #+#              #
-#    Updated: 2026/05/12 01:48:18 by henrique-re      ###   ########.fr        #
+#    Updated: 2026/05/12 17:05:02 by hcarrasq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:=	ClapTrap
+NAME		:=	ScavTrap
 
 CXX		:=	c++
 
