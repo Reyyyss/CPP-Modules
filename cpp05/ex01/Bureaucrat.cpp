@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(150){
 	std::cout << "Default constructor called" << std::endl;
@@ -44,6 +45,10 @@ void Bureaucrat::decrementGrade() {
 	if (grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
 	++grade;
+}
+
+void Bureaucrat::beSigned() { 
+	Form::
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {

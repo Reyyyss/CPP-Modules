@@ -18,6 +18,7 @@ public:
 
 	void incrementGrade();
 	void decrementGrade();
+	void beSigned();	
 
 	class GradeTooHighException : public std::exception {
 		public:
