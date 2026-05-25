@@ -1,44 +1,30 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include <iostream>
 
 int main() {
-	try {
-		Bureaucrat a("Alice", 2);
-		std::cout << a << std::endl;
-		a.incrementGrade();
-		std::cout << a << std::endl;
-		a.incrementGrade();
-	}
-	catch (std::exception &e) {
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
+    try {
+        Bureaucrat low("Bob", 75);
+        Bureaucrat ok("Alice", 50);
+        Bureaucrat top("Boss", 1);
 
-	try {
-		Bureaucrat b("Bob", 150);
-		std::cout << b << std::endl;
-		b.decrementGrade();
-	}
-	catch (std::exception &e) {
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
+        Form f1("FormA", 50, 25);
+        std::cout << f1 << std::endl;
 
-	try {
-		Bureaucrat invalidHigh("BadHigh", 0);
-	}
-	catch (std::exception &e) {
-		std::cout << "Exception on construction: " << e.what() << std::endl;
-	}
+        low.signForm(f1);
+        std::cout << f1 << std::endl;
 
-	try {
-		Bureaucrat invalidLow("BadLow", 151);
-	}
-	catch (std::exception &e) {
-		std::cout << "Exception on construction: " << e.what() << std::endl;
-	}
-	Bureaucrat g("Joao", 5);
-	Bureaucrat f(g);
-
-	std::cout << g <<std::endl;
-	std::cout << f <<std::endl;
-
-	return 0;
+        ok.signForm(f1);
+        std::cout << f1 << std::endl;
+        try {
+            Form bad("BadForm", 0, 10);
+        } catch (std::exception &e) {
+            std::cout << "Construction failed: " << e.what() << std::endl;
+        }
+        top.signForm(f1);
+        std::cout << f1 << std::endl;
+    } catch (std::exception &e) {
+        std::cout << "Unhandled exception: " << e.what() << std::endl;
+    }
+    return 0;
 }

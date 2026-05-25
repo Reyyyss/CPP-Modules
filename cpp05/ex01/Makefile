@@ -3,7 +3,7 @@ NAME := Bureaucrat
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS := Bureaucrat.cpp main.cpp
+SRCS := Bureaucrat.cpp main.cpp Form.cpp
 OBJS := $(SRCS:.cpp=.o)
 
 all: $(NAME)
