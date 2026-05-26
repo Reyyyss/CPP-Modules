@@ -1,13 +1,15 @@
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Form::Form(const std::string &n, int sg, int eg) : name(n), is_signed(false), sign_grade(sg), execute_grade(eg) {
+Form::Form(const std::string &n, int sg, int eg) : name(n), sign_grade(sg), execute_grade(eg), is_signed(false) {
 	if (sign_grade < 1 || execute_grade < 1)
 		throw Form::GradeTooHighException();
 	if (sign_grade > 150 || execute_grade > 150)
 		throw Form::GradeTooLowException();
 }
 
-Form::Form(const Form &other) : name(other.name), sign_grade(other.sign_grade), execute_grade(other.execute_grade) {
+
+Form::Form(const Form &other) : name(other.name), sign_grade(other.sign_grade), execute_grade(other.execute_grade), is_signed(other.is_signed) {
 	std::cout << "Copy Construcor" << std::endl;
 }
 
@@ -48,6 +50,6 @@ int Form::getexecute_grade() const {
 }
 
 std::ostream& operator << (std::ostream& os, const Form& f) {
-	os << f.getname() << "has a sign grade of " << f.getsign_grade() << "and a execution grade of " << f.getexecute_grade() << std::endl;
+	os << f.getname() << " has a sign grade of " << f.getsign_grade() << " and a execution grade of " << f.getexecute_grade() << std::endl;
 	return os;
 }
