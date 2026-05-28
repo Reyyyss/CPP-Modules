@@ -8,7 +8,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
-void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
+void ShrubberyCreationForm::action() const {
 	std::string file = target + "_shrubbery";
 	std::ofstream of(file.c_str());
 	if (!of) {

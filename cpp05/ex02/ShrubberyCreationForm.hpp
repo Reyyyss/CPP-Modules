@@ -2,7 +2,7 @@
 #define SHRUBBERY_HPP
 
 #include "AForm.hpp"
-#include "fstream"
+#include <fstream>
 
 
 class ShrubberyCreationForm : public AForm{
@@ -12,7 +12,7 @@ class ShrubberyCreationForm : public AForm{
 		ShrubberyCreationForm(const std::string& tgt);
 		virtual ~ShrubberyCreationForm(); 
 
-		void	execute(const Bureaucrat& executor) const;
+		void	action() const;
 };
 
 #endif

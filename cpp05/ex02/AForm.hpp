@@ -24,7 +24,7 @@ public:
 	int    getsign_grade() const;
 	int    getexecute_grade() const;
 	void   beSigned(const Bureaucrat& b);
-	virtual void execute(Bureaucrat const &executor) const = 0;
+	void execute(Bureaucrat const &executor) const;
 
 
 	class GradeTooHighException : public std::exception { 
@@ -40,7 +40,12 @@ public:
 	class FormNotSigned : public std::exception {
 		public :
 			virtual const char* what() const throw();
-	}
+		};
+		bool isSigned() const;
+		void execute(Bureaucrat const &executor) const;
+
+	protected:
+		virtual void action() const = 0;
 };
 
 std::ostream& operator<<(std::ostream& os, const AForm& f);

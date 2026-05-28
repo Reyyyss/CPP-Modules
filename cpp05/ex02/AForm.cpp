@@ -53,6 +53,18 @@ int AForm::getexecute_grade() const {
 	return (execute_grade);
 }
 
+bool AForm::isSigned() const {
+	return is_signed;
+}
+
+void AForm::execute(Bureaucrat const &executor) const {
+	if (!is_signed)
+		throw AForm::FormNotSigned();
+	if (executor.getGrade() > execute_grade)
+		throw AForm::GradeTooLowException();
+	action();
+}
+
 std::ostream& operator << (std::ostream& os, const AForm& f) {
 	os << f.getname() << " has a sign grade of " << f.getsign_grade() << " and a execution grade of " << f.getexecute_grade() << std::endl;
 	return os;
