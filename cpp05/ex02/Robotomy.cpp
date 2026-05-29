@@ -2,9 +2,8 @@
 #include <cstdlib>
 #include <ctime>
 
-
 RobotomyRequestForm::RobotomyRequestForm(const std::string &tgt) : AForm("RobotomyRequestForm", 72, 45), target(tgt) {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(NULL));
 	std::cout << "Constructor Called" << std::endl;
 }
 
