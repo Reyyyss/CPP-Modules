@@ -1,9 +1,9 @@
-NAME := Bureaucrat
+NAME := Serializer
 
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS := Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardonForm.cpp Robotomy.cpp ShrubberyCreationForm.cpp
+SRCS := main.cpp
 OBJS := $(SRCS:.cpp=.o)
 
 all: $(NAME)

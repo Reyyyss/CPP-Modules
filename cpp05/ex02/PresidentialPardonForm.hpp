@@ -7,8 +7,10 @@ class PresidentialPardonForm : public AForm {
 	private:
 		std::string target;
 	public: 
-		PresidentialPardonForm(std::string &tgt);
+		PresidentialPardonForm(const std::string &tgt);
 		~PresidentialPardonForm();
+
+		void action() const;
 };
 
 #endif
