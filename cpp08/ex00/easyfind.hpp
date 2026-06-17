@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <cstddef>
 #include <cstdlib>
+#include <vector>
+
 
 template <typename Container>
 typename Container::iterator easyfind(Container &container, int n_to_find);
