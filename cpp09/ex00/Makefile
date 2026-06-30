@@ -1,0 +1,24 @@
+NAME := Bitcoin
+CXX := c++
+CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -g
+
+SRCS := main.cpp btc.cpp
+OBJS := $(SRCS:.cpp=.o)
+
+all : $(NAME)
+
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean: 
+	rm -rf $(OBJS)
+
+fclean:
+	rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
